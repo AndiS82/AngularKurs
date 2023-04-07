@@ -1,0 +1,39 @@
+<hr>
+<p>I'm the Server Component!</p>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online:serverStatus === 'online'}">
+    Server with ID: {{serverID}} Status:{{serverStatus}}</p>
+<p>Test Server Status: {{getServerStatus()}}</p>
+
+<!-- <h2>Assignment 2:</h2>
+<h4>1.Add an input field which updates a property ("username") via Two-Way-Binding</h4>
+<input
+type="text"
+class="form-control"
+[(ngModel)]="username"
+>
+<p>Username: {{username}}</p>
+
+<h4>2.Output the usarname property via String Interpolation in a paragraph below the input</h4>
+<h4>3. Add a button which may only be clicked if the username is not an empty string</h4>
+<p>see form above</p>
+
+<button
+class="btn-primary" [disabled]="!username" (click)="onCreateUser()">Reset Username</button>
+
+<h4>Upon clicking the button, the username should be reset to an empty string</h4>
+<p>see button above</p> -->
+<hr>
+<h2>Assignment 3</h2>
+<h4>1. Add a button which says "Display Details"</h4>
+<button class="btn btn-primary" (click)="showOrHide()">{{buttonText}}</button>
+<h4>2. Add a paragraph with any content of your choice (e.g. "Secret Password = tuna")</h4>
+<p *ngIf="displayTuna; else hidden">Secret Password = tuna</p>
+<ng-template #hidden>
+<p [ngStyle]="{display:none}"></p>
+</ng-template>
+<p>Number of button clicks logged: {{logsArray.length}}</p>
+<h4>3. Toggle the displaying of that paragraph with the button from 1.</h4>
+    <p>Display toggles logged: {{togglesArray.length}}</p>
+<h4>4. Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</h4>
+<p [ngStyle]="{backgroundColor: getBlue()}" *ngFor="let entries of logsArray" [ngClass]="{longerThanFive:logsArray.length >= 5}">{{entries}}</p>
+<h4>5. Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</h4>
